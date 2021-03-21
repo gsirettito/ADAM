@@ -1,0 +1,113 @@
+﻿<Window x:Class="ADAM.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:l="clr-namespace:ADAM"
+        xmlns:math="clr-namespace:WpfMath.Controls;assembly=WpfMath"
+        xmlns:forms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        Title="ADAM" Width="800" Height="400">
+    <DockPanel>
+        <ToolBar DockPanel.Dock="Top">
+            <RadioButton x:Name="_polar_" IsChecked="True" GroupName="param">Polar</RadioButton>
+            <RadioButton GroupName="param">Cartesiano</RadioButton>
+            <Separator/>
+            <RadioButton x:Name="_db_" IsChecked="True" Checked="_db__Checked" GroupName="gain">en dB</RadioButton>
+            <RadioButton Checked="RadioButton_Checked" GroupName="gain">en veces</RadioButton>
+            <Separator/>
+            <Button Click="LoadHandle">Filter</Button>
+        </ToolBar>
+        <ContentControl DockPanel.Dock="Left">
+            <StackPanel Margin="10" HorizontalAlignment="Left">
+                <l:LabeledControl>
+                    <l:LabeledControl.Header>Impedancia</l:LabeledControl.Header>
+                    <l:UnitBox x:Name="_impedance" Width="100" Value="50" SelectedIndex="2" UnitItems="{StaticResource Impedance}"/>
+                </l:LabeledControl>
+                <l:LabeledControl Margin="0,5,0,0">
+                    <l:LabeledControl.Header>Frecuencia</l:LabeledControl.Header>
+                    <l:UnitBox x:Name="_frequency" Width="100" SelectedIndex="4" UnitItems="{StaticResource Frequency}"/>
+                </l:LabeledControl>
+                <GroupBox Header="Parámetros S" Padding="5" Margin="0,5,0,0">
+                    <StackPanel>
+                        <l:LabeledControl Margin="0,5,0,0">
+                            <l:LabeledControl.Header>
+                                <math:FormulaControl Formula="S_{11}"/>
+                            </l:LabeledControl.Header>
+                            <l:PolarCartesianBox x:Name="_s11" IsPolar="{Binding IsChecked, ElementName=_polar_}" Width="150"/>
+                        </l:LabeledControl>
+                        <l:LabeledControl Margin="0,5,0,0">
+                            <l:LabeledControl.Header>
+                                <math:FormulaControl Formula="S_{12}"/>
+                            </l:LabeledControl.Header>
+                            <l:PolarCartesianBox x:Name="_s12" IsPolar="{Binding IsChecked, ElementName=_polar_}" Width="150"/>
+                        </l:LabeledControl>
+                        <l:LabeledControl Margin="0,5,0,0">
+                            <l:LabeledControl.Header>
+                                <math:FormulaControl Formula="S_{21}"/>
+                            </l:LabeledControl.Header>
+                            <l:PolarCartesianBox x:Name="_s21" IsPolar="{Binding IsChecked, ElementName=_polar_}" Width="150"/>
+                        </l:LabeledControl>
+                        <l:LabeledControl Margin="0,5,0,0">
+                            <l:LabeledControl.Header>
+                                <math:FormulaControl Formula="S_{22}"/>
+                            </l:LabeledControl.Header>
+                            <l:PolarCartesianBox x:Name="_s22" IsPolar="{Binding IsChecked, ElementName=_polar_}" Width="150"/>
+                        </l:LabeledControl>
+                    </StackPanel>
+                </GroupBox>
+                <Button Margin="0,5,0,0" Click="calcule">Calular</Button>
+            </StackPanel>
+        </ContentControl>
+
+        <Grid HorizontalAlignment="Left">
+            <StackPanel Margin="10">
+                <l:LabeledControl ToolTip="Factor de Estabilidad">
+                    <l:LabeledControl.Header>
+                        <math:FormulaControl Formula="K"/>
+                    </l:LabeledControl.Header>
+                    <l:NumberBox x:Name="_k" Width="150" Margin="4,2" Height="24"/>
+                </l:LabeledControl>
+                <l:LabeledControl ToolTip="Delta">
+                    <l:LabeledControl.Header>
+                        <math:FormulaControl Formula="\left|\Delta\right|"/>
+                    </l:LabeledControl.Header>
+                    <l:NumberBox x:Name="_delta" Width="150" Margin="4,2" Height="24"/>
+                </l:LabeledControl>
+                <l:LabeledControl ToolTip="Coeficiente de reflexión hacia la carga">
+                    <l:LabeledControl.Header>
+                        <math:FormulaControl Formula="\Gamma_S"/>
+                    </l:LabeledControl.Header>
+                    <l:PolarCartesianBox x:Name="_roS" Width="150" Margin="4,2" Height="24" IsPolar="{Binding IsChecked, ElementName=_polar_}"/>
+                </l:LabeledControl>
+                <l:LabeledControl ToolTip="Coeficiente de reflexión hacia la salida">
+                    <l:LabeledControl.Header>
+                        <math:FormulaControl Formula="\Gamma_L"/>
+                    </l:LabeledControl.Header>
+                    <l:PolarCartesianBox x:Name="_roL" Width="150" Margin="4,2" Height="24" IsPolar="{Binding IsChecked, ElementName=_polar_}"/>
+                </l:LabeledControl>
+                <l:LabeledControl ToolTip="Ganancia">
+                    <l:LabeledControl.Header>
+                        <math:FormulaControl Formula="G_S"/>
+                    </l:LabeledControl.Header>
+                    <l:NumberBox x:Name="_gS" Width="150" Margin="4,2" Height="24"/>
+                </l:LabeledControl>
+                <l:LabeledControl ToolTip="Ganancia">
+                    <l:LabeledControl.Header>
+                        <math:FormulaControl Formula="G_0"/>
+                    </l:LabeledControl.Header>
+                    <l:NumberBox x:Name="_g0" Width="150" Margin="4,2" Height="24"/>
+                </l:LabeledControl>
+                <l:LabeledControl ToolTip="Ganancia">
+                    <l:LabeledControl.Header>
+                        <math:FormulaControl Formula="G_L"/>
+                    </l:LabeledControl.Header>
+                    <l:NumberBox x:Name="_gL" Width="150" Margin="4,2" Height="24"/>
+                </l:LabeledControl>
+                <l:LabeledControl ToolTip="Ganancia">
+                    <l:LabeledControl.Header>
+                        <math:FormulaControl Formula="G_T"/>
+                    </l:LabeledControl.Header>
+                    <l:NumberBox x:Name="_gT" Width="150" Margin="4,2" Height="24"/>
+                </l:LabeledControl>
+            </StackPanel>
+        </Grid>
+    </DockPanel>
+</Window>

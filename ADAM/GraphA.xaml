@@ -1,0 +1,284 @@
+﻿<UserControl x:Class="ADAM.GraphA"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ADAM"
+             xmlns:math="clr-namespace:WpfMath.Controls;assembly=WpfMath"
+             mc:Ignorable="d" 
+             d:DesignHeight="535" d:DesignWidth="744" MouseMove="MouseMoves" MouseDown="MouseDowns">
+    <Viewbox>
+        <Grid Width="744" Height="535" x:Name="grid" Background="White">
+            <Image Source="aten.png" Grid.ColumnSpan="12" Grid.RowSpan="10" Visibility="Collapsed"/>
+            <Canvas Grid.RowSpan="10" Grid.ColumnSpan="12">
+                <Line X1="61" Y1="83" X2="722" Y2="83" Stroke="Gray" StrokeThickness="1.337"/>
+                <Line X1="61" Y1="147" X2="722" Y2="147" Stroke="Gray" StrokeThickness="1.337"/>
+                <Line X1="61" Y1="211" X2="722" Y2="211" Stroke="Gray" StrokeThickness="1.337"/>
+                <Line X1="61" Y1="275" X2="722" Y2="275" Stroke="Gray" StrokeThickness="1.337"/>
+                <Line X1="61" Y1="339" X2="722" Y2="339" Stroke="Gray" StrokeThickness="1.337"/>
+                <Line X1="61" Y1="403" X2="722" Y2="403" Stroke="Gray" StrokeThickness="1.337"/>
+
+                <Line X1="62" Y1="18" X2="62" Y2="468" Stroke="Black" StrokeThickness="3"/>
+                <Line X1="157" Y1="18" X2="157" Y2="468" Stroke="Gray" StrokeThickness="1.337"/>
+                <Line X1="215" Y1="18" X2="215" Y2="468" Stroke="Gray" StrokeThickness="1.337"/>
+                <Line X1="289" Y1="18" X2="289" Y2="468" Stroke="Gray" StrokeThickness="1.337"/>
+                <Line X1="339" Y1="18" X2="339" Y2="468" Stroke="Gray" StrokeThickness="1.337"/>
+                <Line X1="391" Y1="18" X2="391" Y2="468" Stroke="Gray" StrokeThickness="1.337"/>
+                <Line X1="489" Y1="18" X2="489" Y2="468" Stroke="Gray" StrokeThickness="1.337"/>
+                <Line X1="548" Y1="18" X2="548" Y2="468" Stroke="Gray" StrokeThickness="1.337"/>
+                <Line X1="622" Y1="18" X2="622" Y2="468" Stroke="Gray" StrokeThickness="1.337"/>
+                <Line X1="672" Y1="18" X2="672" Y2="468" Stroke="Gray" StrokeThickness="1.337"/>
+                <Line X1="722" Y1="18" X2="722" Y2="468" Stroke="Black" StrokeThickness="3"/>
+
+                <Line X1="60.5" Y1="467" X2="723.5" Y2="467" Stroke="Black" StrokeThickness="3"/>
+                <Line X1="60.5" Y1="19" X2="723.5" Y2="19" Stroke="Black" StrokeThickness="3"/>
+
+                <TextBlock Canvas.Top="226" Canvas.Left="399" Padding="3,0" Background="White" FontSize="15" FontFamily="/ADAM;component/#Cambria Math" RenderTransformOrigin="0,0">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-48.013"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                    <Run FontStyle="Oblique">n</Run> = 6
+                </TextBlock>
+                <TextBlock Canvas.Top="243" Canvas.Left="423" Padding="3,0" Background="White" FontSize="15" FontFamily="/ADAM;component/#Cambria Math" RenderTransformOrigin="0,0">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-48.013"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                    <Run FontStyle="Oblique">n</Run> = 5
+                </TextBlock>
+                <TextBlock Canvas.Top="264" Canvas.Left="450" Padding="3,0" Background="White" FontSize="15" FontFamily="/ADAM;component/#Cambria Math" RenderTransformOrigin="0,0">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-41.947"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                    <Run FontStyle="Oblique">n</Run> = 4
+                </TextBlock>
+                <TextBlock Canvas.Top="290" Canvas.Left="484" Padding="3,0" Background="White" FontSize="15" FontFamily="/ADAM;component/#Cambria Math" RenderTransformOrigin="0,0">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-33.065"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                    <Run FontStyle="Oblique">n</Run> = 3
+                </TextBlock>
+                <TextBlock Canvas.Top="325" Canvas.Left="529" Padding="3,0" Background="White" FontSize="15" FontFamily="/ADAM;component/#Cambria Math" RenderTransformOrigin="0,0">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-25.544"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                    <Run FontStyle="Oblique">n</Run> = 2
+                </TextBlock>
+                <TextBlock Canvas.Top="384" Canvas.Left="572" Padding="3,0" Background="White" FontSize="15" FontFamily="/ADAM;component/#Cambria Math" RenderTransformOrigin="0,0">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-15.593"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                    <Run FontStyle="Oblique">n</Run> = 1
+                </TextBlock>
+
+                <TextBlock Canvas.Top="301" Canvas.Left="12" FontSize="15" FontFamily="/ADAM;component/#Cambria Math" RenderTransformOrigin="0,0">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-90"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                    Attenuation (dB)
+                </TextBlock>
+
+                <TextBlock Canvas.Top="12" Canvas.Left="39" FontSize="15" FontFamily="/ADAM;component/#Cambria Math">
+                    70
+                </TextBlock>
+                <TextBlock Canvas.Top="76" Canvas.Left="39" FontSize="15" FontFamily="/ADAM;component/#Cambria Math">
+                    60
+                </TextBlock>
+                <TextBlock Canvas.Top="140" Canvas.Left="39" FontSize="15" FontFamily="/ADAM;component/#Cambria Math">
+                    50
+                </TextBlock>
+                <TextBlock Canvas.Top="204" Canvas.Left="39" FontSize="15" FontFamily="/ADAM;component/#Cambria Math">
+                    40
+                </TextBlock>
+                <TextBlock Canvas.Top="268" Canvas.Left="39" FontSize="15" FontFamily="/ADAM;component/#Cambria Math">
+                    30
+                </TextBlock>
+                <TextBlock Canvas.Top="332" Canvas.Left="39" FontSize="15" FontFamily="/ADAM;component/#Cambria Math">
+                    20
+                </TextBlock>
+                <TextBlock Canvas.Top="459" Canvas.Left="46" FontSize="15" FontFamily="/ADAM;component/#Cambria Math">
+                    0
+                </TextBlock>
+                <TextBlock Canvas.Top="396" Canvas.Left="39" FontSize="15" FontFamily="/ADAM;component/#Cambria Math">
+                    10
+                </TextBlock>
+                <TextBlock Canvas.Bottom="45" Canvas.Left="50" FontSize="15" FontFamily="/ADAM;component/#Cambria Math">
+                    <Run Text="0.1                        0.2           0.3                0.5          0.7         1.0                        2.0            3.0                 5.0         7.0         10"/>
+                </TextBlock>
+                <TextBlock Canvas.Bottom="24" Canvas.Left="370" FontSize="15" FontFamily="/ADAM;component/#Cambria Math">
+                    <Italic>ω</Italic>
+                </TextBlock>
+                <Line X1="0" Y1="0" X2="15" Y2="0" Canvas.Left="370" Canvas.Bottom="25" StrokeThickness="1" Stroke="Black"/>
+                <TextBlock Canvas.Bottom="5" Canvas.Left="369" FontSize="15" FontFamily="/ADAM;component/#Cambria Math">
+                    <Italic>ω<Run BaselineAlignment="Subscript">c</Run></Italic>
+                </TextBlock>
+                <Line X1="0" Y1="0" X2="0" Y2="25" Canvas.Left="367" Canvas.Bottom="10" StrokeThickness="1" Stroke="Black"/>
+                <Line X1="0" Y1="0" X2="0" Y2="25" Canvas.Left="391" Canvas.Bottom="10" StrokeThickness="1" Stroke="Black"/>
+                <TextBlock Canvas.Bottom="16" Canvas.Left="399" FontSize="15" FontFamily="/ADAM;component/#Cambria Math">
+                    - 1 =
+                </TextBlock>
+                <TextBlock x:Name="factor" Canvas.Bottom="16" Canvas.Left="432" FontSize="15" FontFamily="/ADAM;component/#Cambria Math">
+                    0.0
+                </TextBlock>
+
+            </Canvas>
+            <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform" Grid.ColumnSpan="12" Grid.RowSpan="10">
+                <Canvas Name="svg8" Width="263.29821" Height="188.915">
+                    <Canvas.RenderTransform>
+                        <TranslateTransform X="0" Y="0"/>
+                    </Canvas.RenderTransform>
+                    <Canvas.Resources/>
+                    <!--Unknown tag: sodipodi:namedview-->
+                    <!--Unknown tag: metadata-->
+                    <Canvas Name="layer1">
+                        <Canvas.RenderTransform>
+                            <TranslateTransform X="173.09105" Y="-29.17493"/>
+                        </Canvas.RenderTransform>
+                        <Canvas Name="g1241">
+                            <Canvas.RenderTransform>
+                                <MatrixTransform Matrix="0.26458333 0 0 0.26458333 -173.09105 29.177442"/>
+                            </Canvas.RenderTransform>
+                            <Path Name="path10" StrokeThickness="3.0" Stroke="#FF000000">
+                                <Path.Data>
+                                    <PathGeometry Figures="M 565.6 25.933333 559.33333 39.6 556.2 46.333333 l -3.06667 6.8 -6.26666 13.333334 -6.26667 13.266666 -6.4 12.933334 -3.2 6.4 -3.13333 6.466663 -3.26667 6.33334 -3.2 6.33333 -6.4 12.53333 -3.33333 6.13334 L 508.4 143 l -6.53333 12.13333 -3.33334 5.93334 -3.26666 6 -3.33334 5.86666 -3.26666 5.93334 -3.4 5.73333 -3.33334 5.8 -6.66666 11.46667 -6.8 11.2 -3.4 5.53333 -3.33334 5.6 -6.93333 10.8 -3.46667 5.33333 -3.4 5.33334 -3.53333 5.2 -3.46667 5.26666 -6.93333 10.4 -7.06667 10.13334 -7.06666 10 -3.6 4.86666 -3.53334 4.93334 -7.06666 9.66666 L 402 310.8 l -3.6 4.73333 -3.66667 4.6 -3.6 4.66667 -7.33333 9.06667 -3.66667 4.46666 -3.6 4.46667 -3.73333 4.33333 -3.66667 4.33334 -3.73333 4.26666 -3.66667 4.33334 -7.46666 8.33333 -3.73334 4.13333 -3.66666 4.13334 -7.6 7.93333 -7.6 7.8 -3.86667 3.8 -3.8 3.8 -7.6 7.53333 -3.93333 3.6 -3.86667 3.6 -7.73333 7.13334 -3.93334 3.46666 -3.86666 3.46667 -3.93334 3.4 -3.86666 3.4 -4 3.26667 -3.93334 3.26666 -4 3.2 -3.93333 3.2 -8 6.2 -4 3 -3.93333 3.06667 -8.13334 5.8 -4.06666 2.86667 -4 2.86666 -8.13334 5.46667 -8.13333 5.4 -4.2 2.53333 -4.13333 2.53334 -8.26667 5 -4.2 2.33333 -4.13333 2.4 -4.2 2.33333 -4.13334 2.33334 -4.26666 2.2 -4.2 2.2 -8.4 4.26666 -4.26667 2 -4.2 2.06667 -4.26667 1.93333 -4.2 2 -8.66666 3.66667 -4.33334 1.73333 -4.26666 1.8 -8.66667 3.33334 -8.66667 3.2 -8.8 2.93333 -4.4 1.4 -4.33333 1.46667 -8.8 2.6 -8.8 2.53333 -0.333333 0.13333" FillRule="NonZero"/>
+                                </Path.Data>
+                            </Path>
+                            <Path Name="path9" StrokeThickness="3.0" Stroke="#FF000000">
+                                <Path.Data>
+                                    <PathGeometry Figures="m 596.93333 25.8 -3.26666 6.866667 -3.2 6.933333 -3.26667 6.8 -3.2 6.866667 -6.53333 13.466666 -6.53334 13.333334 -6.66666 13.066666 -6.66667 12.933337 -3.4 6.33333 -3.33333 6.4 -3.4 6.33333 -3.33334 6.33334 -3.46666 6.13333 -3.4 6.2 -3.46667 6.06667 -3.4 6.13333 -6.93333 12 -6.93334 11.93333 -7.06666 11.6 -3.53334 5.73334 -3.46666 5.8 -3.6 5.66666 -3.53334 5.66667 -3.6 5.6 -3.53333 5.6 -3.66667 5.4 -3.6 5.46667 -3.66666 5.4 -3.6 5.4 -3.73334 5.26666 -3.66666 5.33334 -7.33334 10.46666 -7.46666 10.2 L 444 288.6 l -3.8 4.93333 -3.73333 4.93334 -3.8 4.86666 -3.73334 4.86667 -3.86666 4.73333 -3.8 4.73334 -3.86667 4.66666 -3.8 4.66667 -7.73333 9.13333 -7.73334 9.06667 -7.86666 8.73333 L 382.4 362.6 l -4 4.2 -3.93333 4.2 -4 4.13333 -3.93334 4.2 -8.13333 8 -4.06667 3.93334 -4 4 -4.13333 3.8 -4.06667 3.86666 -8.13333 7.6 -8.26667 7.26667 -8.26666 7.2 -4.2 3.46667 -4.13334 3.53333 -4.2 3.4 L 300.8 438.86667 292.26667 445.4 288 448.6 283.8 451.86667 279.46667 455 275.2 458.13333 l -8.53333 6.13334 -8.66667 5.86666 -8.66667 5.73334 -4.4 2.73333 -4.33333 2.8 -4.4 2.73333 -4.33333 2.73334 -8.93334 5.13333 -4.46666 2.46667 -4.4 2.53333 -4.53334 2.4 -4.46666 2.4 -8.93334 4.73333 -4.6 2.2 -4.53333 2.2 -9.06667 4.33334 -9.2 4.06666 -4.6 2 -4.53333 2 -9.33333 3.66667 -4.66667 1.8 -4.6 1.8 -4.73333 1.66667 -4.66667 1.66666 -9.33333 3.26667 -9.46667 3 -9.46667 2.86667 -9.599997 2.66666 -4.8 1.26667 L 84.2 548.26667 83.866667 548.4" FillRule="NonZero"/>
+                                </Path.Data>
+                            </Path>
+                            <Path Name="path8" StrokeThickness="3.0" Stroke="#FF000000">
+                                <Path.Data>
+                                    <PathGeometry Figures="M 630.6 25.8 623.53333 40.266667 620 47.4 l -3.46667 7.2 -3.6 7 -3.53333 7.066667 -7.06667 14 -7.2 13.666666 -7.2 13.533337 -3.66666 6.66666 -3.6 6.66667 -3.66667 6.6 -3.6 6.6 -3.73333 6.4 L 566 149.26667 562.26667 155.6 558.6 162 l -7.46667 12.53333 -7.46666 12.4 -7.6 12.06667 -7.6 12 -3.86667 5.86667 -3.8 5.86666 -3.86667 5.8 -3.8 5.8 -7.86666 11.26667 -3.93334 5.53333 -3.86666 5.6 -7.86667 10.93334 -7.86667 10.8 -8 10.46666 -8 10.4 -4.06666 5.06667 -4 5.06667 -4.06667 5 -4 5 -4.13333 4.8 -4.06667 4.86666 -4.13333 4.73334 -4.06667 4.8 -8.26667 9.33333 -8.26666 9.2 -8.4 8.93333 -8.4 8.8 L 395.6 379.2 l -4.2 4.26667 -4.26667 4.2 -4.2 4.2 -8.66666 8.06666 -4.33334 3.93334 -4.26666 4 L 357 415.6 l -8.66667 7.6 -8.8 7.33333 -8.8 7.2 -4.46666 3.46667 -4.4 3.46667 -4.46667 3.4 -4.4 3.4 -4.53333 3.2 -4.46667 3.26666 -4.53333 3.2 -4.46667 3.2 -9.06667 6.13334 -9.06666 6 -9.2 5.73333 -9.2 5.6 -4.66667 2.66667 -4.6 2.66666 -4.66667 2.6 -4.6 2.6 -4.73333 2.4 -4.66667 2.46667 -4.73333 2.4 -4.66667 2.4 -9.46666 4.53333 -9.46667 4.4 -9.6 4.13334 -9.6 4 -4.86667 1.86666 -4.8 1.86667 -4.86666 1.8 -4.8 1.8 -4.93334 1.66667 -4.86666 1.66666 -4.93334 1.6 -4.86666 1.6 -9.86667 2.93334 -9.86667 2.8 -10 2.53333 -10 2.4 -5.066663 1.06667 -5 1.06666 -5.066667 1 -5 1 -0.333333 0.0667" FillRule="NonZero"/>
+                                </Path.Data>
+                            </Path>
+                            <Path Name="path7" StrokeThickness="3.0" Stroke="#FF000000">
+                                <Path.Data>
+                                    <PathGeometry Figures="m 674.86667 25.8 -8.13334 15.266667 -8.13333 15.066666 -4.13333 7.4 -4.06667 7.4 L 642.26667 85.6 634 100 l -8.26667 14.2 -4.2 6.93333 -4.13333 7 -8.26667 13.8 -4.26666 6.73334 -4.2 6.73333 -8.4 13.33333 L 588 175.26667 583.8 181.8 575.4 194.73333 571.06667 201 566.8 207.33333 558.26667 219.8 l -4.33334 6.06667 -4.26666 6.13333 -8.53334 12.06667 -4.4 5.86666 L 532.4 255.8 l -8.66667 11.53333 -8.8 11.33334 -4.4 5.53333 -4.33333 5.6 -4.46667 5.4 -4.4 5.46667 -8.8 10.66666 L 479.6 321.8 l -4.46667 5.13333 -4.4 5.13334 L 466.2 337 l -4.46667 5 -4.53333 4.86667 -4.46667 4.93333 -9.06666 9.53333 -4.53334 4.66667 -4.46666 4.73333 -4.6 4.53334 -4.53334 4.53333 -9.06666 8.93333 -9.2 8.66667 -4.6 4.26667 -4.53334 4.26666 -9.33333 8.2 -4.66667 4 -4.6 4 -9.33333 7.8 -9.33333 7.6 L 351.4 444.86667 346.66667 448.4 342 452 l -9.46667 6.93333 -9.46666 6.73334 -9.6 6.4 -4.8 3.13333 -4.73334 3.13333 -4.86666 3 -4.8 3 -9.6 5.86667 -9.73334 5.6 -4.86666 2.66667 -4.8 2.73333 -9.73334 5.13333 -9.73333 5 -5 2.33334 L 235.86667 516 226 520.46667 221 522.6 216.06667 524.73333 206.2 528.8 l -10 3.8 -10 3.66667 -5.06667 1.66666 -5 1.73334 -10 3.2 L 161 544.33333 155.93333 545.8 145.8 548.53333 l -5.13333 1.2 L 135.6 551 l -5.13333 1.13333 -5.06667 1.2 -5.2 1 -5.13333 1.06667 -10.26667 1.86667 -5.2 0.8 -5.133333 0.8 L 84.2 560.33333 h -0.333333" FillRule="NonZero"/>
+                                </Path.Data>
+                            </Path>
+                            <Path Name="path6" StrokeThickness="3.0" Stroke="#FF000000">
+                                <Path.Data>
+                                    <PathGeometry Figures="m 725.33333 25.8 -9.46666 16 -9.46667 15.866667 -9.46667 15.6 -9.46666 15.4 -9.6 15.066663 L 668.4 118.6 l -9.6 14.66667 -9.46667 14.4 -9.6 14.13333 -9.6 13.86667 -4.86666 6.8 -4.8 6.86666 -9.6 13.46667 -9.73334 13.13333 -9.6 12.93334 -9.73333 12.66666 -9.6 12.53334 -4.93333 6.06666 L 562.4 266.2 l -9.73333 12 -4.93334 5.86667 -4.86666 5.86666 -9.73334 11.46667 -9.86666 11.2 -9.73334 11 -9.86666 10.8 -4.93334 5.26667 -4.86666 5.26666 -5 5.06667 -4.93334 5.13333 -9.86666 10 -10 9.73334 -9.86667 9.6 -10 9.26666 -5 4.53334 -4.93333 4.53333 -10 8.8 -5 4.33333 -4.93334 4.33334 -10.13333 8.26666 -10 8.06667 -10.13333 7.86667 -10 7.6 -10.13334 7.33333 -5.06666 3.53333 -5 3.53334 -10.13334 6.86666 L 333.6 480 l -10.26667 6.33333 -10.13333 6.13334 -10.26667 5.86666 -5.13333 2.8 -5.06667 2.86667 -10.26666 5.33333 -10.26667 5.2 -10.26667 4.93334 -10.26666 4.73333 -10.4 4.4 -5.2 2.06667 -5.13334 2.06666 -10.4 3.93334 -5.2 1.86666 L 210.2 540.4 l -10.4 3.46667 -10.4 3.2 -5.26667 1.46666 -5.2 1.53334 -10.4 2.8 -10.53333 2.4 -5.26667 1.13333 -5.2 1.13333 -10.53333 2 -10.53333 1.8 -5.33334 0.73334 -5.26666 0.73333 -10.53334 1.33333 L 100 564.66667 94.733333 565.2 84.2 566.06667 h -0.333333" FillRule="NonZero"/>
+                                </Path.Data>
+                            </Path>
+                            <Path Name="path5" StrokeThickness="3.0" Stroke="#FF000000">
+                                <Path.Data>
+                                    <PathGeometry Figures="M 788.86667 26.066667 778.06667 43 l -5.33334 8.4 -5.33333 8.333333 -5.4 8.2 -5.33333 8.2 L 746 92.4 l -10.8 15.86667 -5.4 7.86666 -5.33333 7.8 -10.8 15.33334 -10.66667 15.2 -10.8 14.8 L 681.4 183.8 670.6 198.06667 659.8 212.2 l -5.46667 6.86667 -5.4 6.86666 -5.46666 6.8 -5.33334 6.73334 -10.8 13.2 -10.8 13.06666 L 605.6 278.4 l -5.46667 6.2 -5.4 6.2 -10.93333 12.13333 -5.46667 6 -5.33333 5.93334 -10.93333 11.6 -5.46667 5.66666 -5.4 5.66667 -10.93333 11.06667 -5.46667 5.46666 -5.4 5.4 -5.53333 5.26667 -5.46667 5.26667 -10.93333 10.26666 -10.93334 10 -10.93333 9.73334 -11.06667 9.46666 -10.93333 9.2 L 458.06667 423.4 452.6 427.86667 441.66667 436.53333 430.6 444.8 l -11.06667 8.13333 -11.06666 7.86667 -5.53334 3.8 -5.46666 3.8 -11.06667 7.2 -11.06667 7.06667 -11.06666 6.8 L 353.2 496 l -11.2 6.13333 -11.06667 6 -5.6 2.86667 -5.53333 2.8 -11.06667 5.46667 -11.2 5.06666 -11.06666 4.93334 -11.2 4.66666 -11.06667 4.4 -11.2 4 -11.2 3.86667 -11.2 3.46667 -11.2 3.33333 -5.66667 1.46667 -5.6 1.46666 -11.2 2.8 -11.2 2.4 -11.2 2.26667 -11.33333 1.86667 -5.66667 0.86666 -5.6 0.8 -11.33333 1.33334 -11.2 1.2 -11.33333 0.8 L 112.4 570.6 106.8 570.86667 95.466667 571.13333 89.8 571.2 l -5.6 0.0667 h -0.333333" FillRule="NonZero"/>
+                                </Path.Data>
+                            </Path>
+                            <Path Name="path4" StrokeThickness="3.0" Stroke="#FF000000">
+                                <Path.Data>
+                                    <PathGeometry Figures="M 882.53333 26.2 870 43.533333 l -6.26667 8.6 -6.26666 8.533334 -12.53334 16.8 -12.4 16.666666 L 820 110.4 l -12.4 16 -12.53333 15.73333 -6.26667 7.8 -6.13333 7.73334 -12.53334 15.06666 -12.4 14.93334 -6.26666 7.33333 -6.26667 7.26667 -12.4 14.4 -12.53333 14 L 714 237.6 l -6.13333 6.86667 -12.53334 13.46666 -12.4 13.33334 -6.26666 6.46666 -6.26667 6.4 -12.53333 12.66667 -12.53334 12.4 -12.4 12.13333 -12.53333 11.73334 -12.4 11.6 -12.53333 11.2 -12.4 11.06666 -12.53334 10.66667 -12.4 10.4 -12.53333 10.13333 -6.26667 5 -6.13333 4.93334 -6.26667 4.8 -6.26666 4.73333 -12.4 9.33333 -6.26667 4.53334 -6.26667 4.46666 -12.4 8.8 -12.53333 8.4 -6.26667 4.13334 -6.26666 4.06666 -12.53334 7.86667 -6.26666 3.86667 -6.13334 3.8 -6.26666 3.66666 -6.26667 3.6 -12.4 7.06667 -12.53333 6.8 -12.4 6.53333 -12.53334 6.13334 -6.26666 3 L 358.53333 516.6 346 522.2 l -12.4 5.46667 -12.53333 5.06666 -12.4 4.8 -12.53334 4.53334 -6.26666 2.2 -6.13334 2.13333 -12.53333 3.86667 -6.26667 1.86666 -6.2 1.86667 -6.26666 1.73333 L 246.2 557.4 233.8 560.6 221.26667 563.4 215 564.73333 208.86667 566 l -12.53334 2.26667 -6.26666 1.06666 -6.13334 1 -6.26666 0.86667 -6.26667 0.8 -12.4 1.46667 -12.53333 1.2 -12.4 0.93333 -12.53334 0.53333 -12.4 0.4 H 96.6 L 84.2 576.4 h -0.333333" FillRule="NonZero"/>
+                                </Path.Data>
+                            </Path>
+                            <Path Name="path3" StrokeThickness="3.0" Stroke="#FF000000">
+                                <Path.Data>
+                                    <PathGeometry Figures="M 965.13333 90.533333 958.46667 98.2 l -6.6 7.73333 -13.2 15.2 -13.33334 14.93334 -13.2 14.73333 -13.33333 14.4 -6.66667 7.06667 -6.6 7.13333 -13.33333 14 -6.66667 6.86667 -6.6 6.86666 L 852.2 213.86667 845.53333 220.6 832.2 233.8 l -13.46667 12.93333 -13.33333 12.8 -13.46667 12.4 -6.73333 6.13334 -6.66667 6.13333 -13.46666 12 -6.73334 5.86667 -6.66666 5.93333 -13.6 11.46667 -13.46667 11.2 -13.6 11 -13.46667 10.8 -13.6 10.46666 -6.8 5.13334 L 670.4 373.2 l -13.6 10 -6.8 4.86667 -6.73333 4.93333 -13.73334 9.46667 -13.6 9.26666 L 602.2 420.8 l -13.6 8.8 -13.73333 8.53333 -6.86667 4.13334 -6.8 4.13333 -13.73333 8 -13.73334 7.86667 -13.86666 7.46666 -13.73334 7.33334 -13.86666 7.06666 -6.93334 3.4 -6.86666 3.4 L 464.6 497.46667 450.73333 503.73333 436.86667 509.8 423 515.66667 409 521.2 l -13.86667 5.33333 -14 5.06667 -7 2.4 -6.93333 2.46667 -14 4.53333 -14 4.4 -14 4.13333 -14 3.86667 -14.13333 3.53333 L 290 558.6 l -7 1.66667 -14.13333 3.06666 L 261.8 564.8 l -7 1.46667 -14.13333 2.53333 -14.13334 2.4 -14.13333 2.13333 -14.13333 1.93334 -14.26667 1.6 -7.13333 0.66666 L 169.8 578.2 155.53333 579.33333 148.4 579.8 l -7.06667 0.46667 -14.26666 0.6 -14.26667 0.4 -7.2 0.0667 -7.133333 0.0667 H 84.2 83.866667" FillRule="NonZero"/>
+                                </Path.Data>
+                            </Path>
+                            <Path Name="path2" StrokeThickness="3.0" Stroke="#FF000000">
+                                <Path.Data>
+                                    <PathGeometry Figures="M 964.6 273.53333 958 278.4 951.46667 283.33333 938.4 293.06667 931.8 297.8 925.26667 302.6 912.2 312 l -13.2 9.13333 -6.6 4.53334 -6.53333 4.6 -13.2 8.86666 -13.2 8.86667 -13.33334 8.53333 -13.2 8.46667 -13.33333 8.26667 -13.2 8.2 -13.33333 7.93333 -13.33334 7.86667 -6.73333 3.8 -6.66667 3.86666 -13.33333 7.53334 -13.46667 7.26666 -6.73333 3.6 -6.66667 3.6 -13.46666 7 -13.46667 6.93334 -13.6 6.66666 -13.46667 6.6 -13.6 6.33334 -13.46666 6.33333 -6.86667 3 -6.8 3.06667 -13.6 5.93333 -6.86667 2.86667 -6.8 2.86666 -13.6 5.66667 -13.73333 5.4 -6.86667 2.66667 -6.8 2.66666 -13.73333 5.13334 -6.86667 2.53333 -6.8 2.53333 -13.86666 4.73334 -13.73334 4.73333 -13.86666 4.46667 -6.93334 2.2 -6.86666 2.2 L 466.6 533.6 l -13.86667 4.06667 -7 1.86666 -6.93333 1.93334 -13.86667 3.8 -14 3.53333 -7 1.66667 L 397 552.2 l -14 3.2 -14 3.13333 -7.06667 1.4 -7 1.46667 -14 2.86667 -14.13333 2.6 -14 2.53333 -7.13333 1.06667 L 298.6 571.6 l -14.13333 2.2 -7.13334 0.93333 -7.06666 1 -14.13334 1.86667 -14.26666 1.66667 -7.13334 0.73333 -7.06666 0.8 -14.26667 1.33333 -7.13333 0.6 L 199.2 583.4 l -14.4 1 -14.26667 0.93333 -14.4 0.73334 -14.26666 0.6 -14.4 0.33333 -14.4 0.33333 H 105.8 L 98.6 587.4 H 84.2 83.866667" FillRule="NonZero"/>
+                                </Path.Data>
+                            </Path>
+                            <Path Name="path1" StrokeThickness="3.0" Stroke="#FF000000">
+                                <Path.Data>
+                                    <PathGeometry Figures="m 963.8 441.8 -5.8 2.4 -5.73333 2.46667 -5.8 2.4 -5.73334 2.46666 -11.6 4.8 -5.86666 2.33334 -5.8 2.4 -5.93334 2.26666 -5.86666 2.33334 -11.8 4.53333 -11.86667 4.46667 -11.93333 4.4 -12.06667 4.26666 -12.13333 4.2 -12.2 4.13334 -6.13334 2 -6.06666 2.06666 -12.4 3.93334 -12.4 3.86666 L 790.4 505.4 l -6.2 1.93333 -6.26667 1.86667 -6.2 1.93333 -12.66666 3.6 -12.66667 3.53334 -12.8 3.46666 -12.8 3.4 -12.93333 3.26667 -13 3.2 -13.06667 3.13333 -13.06667 3.13334 -13.26666 2.93333 -6.66667 1.4 -6.6 1.46667 -13.33333 2.8 -13.4 2.8 -6.8 1.26666 -6.73334 1.33334 -6.8 1.26666 -6.73333 1.33334 -13.6 2.46666 -6.86667 1.2 -6.8 1.26667 -13.86666 2.26667 -13.86667 2.2 -13.93333 2.13333 -7 1 -6.93334 1.06667 L 491.4 570 l -14.13333 1.93333 -7.13334 0.86667 -7.06666 0.93333 -14.26667 1.8 -14.4 1.6 -14.4 1.6 -14.53333 1.46667 -14.53334 1.46667 -14.66666 1.26666 -7.4 0.6 -7.33334 0.66667 -14.8 1.13333 -14.8 1.13334 -15 0.93333 -15 0.93333 -15.06666 0.8 -15.13334 0.8 -7.66666 0.26667 -7.6 0.33333 L 248.8 590.8 l -7.6 0.33333 -7.73333 0.2 L 225.8 591.6 l -7.73333 0.2 -7.66667 0.26667 -15.6 0.26666 -15.6 0.26667 -15.66667 0.13333 -15.66666 0.13334 H 132 L 116.13333 592.8 100.2 592.66667 l -16 -0.2 -0.2 -0.0667 -0.133333 0.0667" FillRule="NonZero"/>
+                                </Path.Data>
+                            </Path>
+                        </Canvas>
+                    </Canvas>
+                </Canvas>
+            </Viewbox>
+            <Canvas>
+                <TextBlock Canvas.Top="185" Canvas.Left="323" Padding="3,0" Background="White" FontSize="15" FontFamily="/ADAM;component/#Cambria Math" RenderTransformOrigin="0,0">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-54.198"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                    <Run FontStyle="Oblique">n</Run> = 10
+                </TextBlock>
+                <TextBlock Canvas.Top="193" Canvas.Left="339" Padding="3,0" Background="White" FontSize="15" FontFamily="/ADAM;component/#Cambria Math" RenderTransformOrigin="0,0">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-55.143"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                    <Run FontStyle="Oblique">n</Run> = 9
+                </TextBlock>
+                <TextBlock Canvas.Top="202" Canvas.Left="355" Padding="3,0" Background="White" FontSize="15" FontFamily="/ADAM;component/#Cambria Math" RenderTransformOrigin="0,0">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-55.143"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                    <Run FontStyle="Oblique">n</Run> = 8
+                </TextBlock>
+                <TextBlock Canvas.Top="210" Canvas.Left="373" Padding="3,0" Background="White" FontSize="15" FontFamily="/ADAM;component/#Cambria Math" RenderTransformOrigin="0,0">
+                    <TextBlock.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-50.949"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </TextBlock.RenderTransform>
+                    <Run FontStyle="Oblique">n</Run> = 7
+                </TextBlock>
+            </Canvas>
+            <Canvas>
+                <Line x:Name="xLine" Canvas.Left="0" Canvas.Top="0" Stroke="Brown" StrokeThickness="1.6" StrokeDashArray="2 2 0"/>
+                <Line x:Name="yLine" Canvas.Left="0" Canvas.Top="0" Stroke="Brown" StrokeThickness="1.6" StrokeDashArray="2 2 0"/>
+                <TextBlock x:Name="att" Canvas.Top="466" Canvas.Left="90" Padding="3,0" Background="White" FontSize="15" FontFamily="/ADAM;component/#Cambria Math"/>
+                <Ellipse x:Name="xpoint" Width="8" Height="{Binding Width, RelativeSource={RelativeSource Self}}" Canvas.Left="58.4" Canvas.Top="463.4" Fill="Brown"/>
+                <Ellipse x:Name="ypoint" Width="8" Height="{Binding Width, RelativeSource={RelativeSource Self}}" Canvas.Left="58.4" Canvas.Top="463.4" Fill="Brown"/>
+            </Canvas>
+        </Grid>
+    </Viewbox>
+</UserControl>

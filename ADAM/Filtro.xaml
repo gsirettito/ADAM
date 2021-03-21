@@ -1,0 +1,160 @@
+﻿<Window x:Class="ADAM.Filtro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:l="clr-namespace:ADAM"
+        FontFamily="/ADAM;component/#Cambria Math"
+        xmlns:math="clr-namespace:Microsoft.MicrosoftMath.Controls;assembly=MathControls"
+        xmlns:forms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        FontSize="16"
+        Title="MainWindow" Width="800" Height="400">
+    <Window.Resources>
+        <Style TargetType="l:LabeledControl">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="l:LabeledControl">
+                        <Border>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="DirectionState">
+                                    <VisualState x:Name="Left"/>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <DockPanel>
+                                <ContentControl Name="label" Content="{TemplateBinding Header}"/>
+                                <ContentPresenter Name="content"/>
+                            </DockPanel>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="HeaderDirection" Value="Left">
+                                <Setter Property="DockPanel.Dock" TargetName="label" Value="Left"/>
+                                <Setter Property="VerticalAlignment" TargetName="label" Value="Center"/>
+                                <Setter Property="HorizontalAlignment" TargetName="content" Value="Right"/>
+                            </Trigger>
+                            <Trigger Property="HeaderDirection" Value="Top">
+                                <Setter Property="DockPanel.Dock" TargetName="label" Value="Top"/>
+                            </Trigger>
+                            <Trigger Property="HeaderDirection" Value="Right">
+                                <Setter Property="DockPanel.Dock" TargetName="label" Value="Right"/>
+                                <Setter Property="VerticalAlignment" TargetName="label" Value="Center"/>
+                                <Setter Property="HorizontalAlignment" TargetName="content" Value="Left"/>
+                            </Trigger>
+                            <Trigger Property="HeaderDirection" Value="Bottom">
+                                <Setter Property="DockPanel.Dock" TargetName="label" Value="Bottom"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="LargeHeaderLabeledControl" TargetType="l:LabeledControl">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="l:LabeledControl">
+                        <Border>
+                            <DockPanel>
+                                <ContentControl Name="label" Content="{TemplateBinding Header}"/>
+                                <ContentPresenter Name="content"/>
+                            </DockPanel>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="HeaderDirection" Value="Left">
+                                <Setter Property="DockPanel.Dock" TargetName="label" Value="Left"/>
+                                <Setter Property="VerticalAlignment" TargetName="label" Value="Center"/>
+                                <Setter Property="Width" TargetName="label" Value="100"/>
+                                <Setter Property="HorizontalAlignment" TargetName="content" Value="Right"/>
+                            </Trigger>
+                            <Trigger Property="HeaderDirection" Value="Top">
+                                <Setter Property="DockPanel.Dock" TargetName="label" Value="Top"/>
+                            </Trigger>
+                            <Trigger Property="HeaderDirection" Value="Right">
+                                <Setter Property="DockPanel.Dock" TargetName="label" Value="Right"/>
+                                <Setter Property="VerticalAlignment" TargetName="label" Value="Center"/>
+                                <Setter Property="Width" TargetName="label" Value="100"/>
+                                <Setter Property="HorizontalAlignment" TargetName="content" Value="Left"/>
+                            </Trigger>
+                            <Trigger Property="HeaderDirection" Value="Bottom">
+                                <Setter Property="DockPanel.Dock" TargetName="label" Value="Bottom"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <l:UnitCollection x:Key="Impedance">
+            <l:Unit Name="Micro ohm" Factor="1E-6" Symbol="µΩ"/>
+            <l:Unit Name="Mili ohm" Factor="1E-3" Symbol="mΩ"/>
+            <l:Unit Name="Ohm" Factor="1" Symbol="Ω"/>
+            <l:Unit Name="Kilo ohm" Factor="1E3" Symbol="kΩ"/>
+            <l:Unit Name="Mega ohm" Factor="1E6" Symbol="MΩ"/>
+        </l:UnitCollection>
+
+        <l:UnitCollection x:Key="Frequency">
+            <l:Unit Name="Mili hertz" Factor="1E-3" Symbol="mHz"/>
+            <l:Unit Name="Hertz" Factor="1" Symbol="Hz"/>
+            <l:Unit Name="Kilo Hertz" Factor="1E3" Symbol="kHz"/>
+            <l:Unit Name="Mega Hertz" Factor="1E6" Symbol="MHz"/>
+            <l:Unit Name="Giga Hertz" Factor="1E9" Symbol="GHz"/>
+        </l:UnitCollection>
+    </Window.Resources>
+    <DockPanel>
+        <ToolBar DockPanel.Dock="Top">
+            <RadioButton x:Name="_db_" IsChecked="True" GroupName="gain">en dB</RadioButton>
+            <RadioButton GroupName="gain">en veces</RadioButton>
+        </ToolBar>
+        <Expander Background="CornflowerBlue" DockPanel.Dock="Left" ExpandDirection="Left" IsExpanded="True">
+            <StackPanel Margin="10" HorizontalAlignment="Left">
+                <l:LabeledControl>
+                    <l:LabeledControl.Header>Frecuencia de Corte</l:LabeledControl.Header>
+                    <l:UnitBox x:Name="_freq" Width="100" Margin="4,2" SelectedIndex="1" UnitItems="{StaticResource Frequency}"/>
+                </l:LabeledControl>
+                <l:LabeledControl>
+                    <l:LabeledControl.Header>Frecuencia a 20 dB</l:LabeledControl.Header>
+                    <l:UnitBox x:Name="_aten" Width="100" Margin="4,2" SelectedIndex="1" UnitItems="{StaticResource Frequency}"/>
+                </l:LabeledControl>
+                <l:LabeledControl>
+                    <l:LabeledControl.Header>Impedancia</l:LabeledControl.Header>
+                    <l:UnitBox x:Name="_impedance" Width="100" Margin="4,2" SelectedIndex="2" UnitItems="{StaticResource Impedance}"/>
+                </l:LabeledControl>
+                <l:LabeledControl>
+                    <l:LabeledControl.Header>
+                        <TextBlock>Impedancia Z<Run Typography.Variants="Subscript" FontSize="14" BaselineAlignment="Subscript">L</Run></TextBlock>
+                    </l:LabeledControl.Header>
+                    <l:UnitBox x:Name="_impedanceL" Width="100" Margin="4,2" SelectedIndex="2" UnitItems="{StaticResource Impedance}"/>
+                </l:LabeledControl>
+                <l:LabeledControl>
+                    <l:LabeledControl.Header>
+                        <TextBlock>Impedancia Z<Run Typography.Variants="Subscript" FontSize="14" BaselineAlignment="Subscript">H</Run></TextBlock>
+                    </l:LabeledControl.Header>
+                    <l:UnitBox x:Name="_impedanceH" Width="100" Margin="4,2" SelectedIndex="2" UnitItems="{StaticResource Impedance}"/>
+                </l:LabeledControl>
+                <Button Margin="0,8,0,4" Padding="6,4">Calular</Button>
+            </StackPanel>
+        </Expander>
+
+        <Grid Background="WhiteSmoke">
+            <StackPanel Margin="10">
+                <l:LabeledControl>
+                    <l:LabeledControl.Header>
+                        <TextBlock>w/w<Run BaselineAlignment="Subscript">c</Run> - 1</TextBlock>
+                    </l:LabeledControl.Header>
+                    <l:NumberBox x:Name="_k" Width="150" Margin="4,2" Height="24"/>
+                </l:LabeledControl>
+                <l:LabeledControl>
+                    <l:LabeledControl.Header>n</l:LabeledControl.Header>
+                    <l:NumberBox x:Name="_delta" Width="150" Margin="4,2" Height="24"/>
+                </l:LabeledControl>
+                <StackPanel x:Name="glist">
+                    <l:LabeledControl>
+                        <l:LabeledControl.Header>
+                            <TextBlock>g<Run FontSize="12" BaselineAlignment="Subscript">i</Run></TextBlock>
+                        </l:LabeledControl.Header>
+                        <l:NumberBox x:Name="_roS" Width="150" Margin="4,2" Height="24"/>
+                    </l:LabeledControl>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </DockPanel>
+</Window>

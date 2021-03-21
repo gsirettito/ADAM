@@ -1,0 +1,54 @@
+﻿<Window x:Class="ADAM.GraphAW"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:l="clr-namespace:ADAM"
+        xmlns:math="clr-namespace:WpfMath.Controls;assembly=WpfMath"
+        mc:Ignorable="d"
+        Title="GraphAW" Height="350" Width="640">
+    <DockPanel>
+        <ToolBar DockPanel.Dock="Top">
+            <Button Click="CopyClick">Copy Graph</Button>
+        </ToolBar>
+        <ContentControl x:Name="page" DockPanel.Dock="Left">
+            <StackPanel Margin="10">
+                <l:LabeledControl Header="Frecuencia de corte" HeaderDirection="Left">
+                    <l:UnitBox x:Name="freq" UnitItems="{StaticResource Frequency}" Width="85" SelectedIndex="4"/>
+                </l:LabeledControl>
+                <l:LabeledControl Header="Frecuencia de atenucaión" HeaderDirection="Left" Margin="0,5,0,0">
+                    <l:UnitBox x:Name="fatt" UnitItems="{StaticResource Frequency}" Width="85" SelectedIndex="4"/>
+                </l:LabeledControl>
+                <l:LabeledControl Header="Atenucaión" HeaderDirection="Left" Margin="0,5,0,0">
+                    <l:UnitBox x:Name="att" Width="85" SelectedIndex="0" Value="20">
+                        <l:UnitBox.UnitItems>
+                            <l:UnitCollection>
+                                <l:Unit Name="dB" Symbol="dB" Factor="1"/>
+                            </l:UnitCollection>
+                        </l:UnitBox.UnitItems>
+                    </l:UnitBox>
+                </l:LabeledControl>
+                <l:LabeledControl Header="Impedancia del filtro" HeaderDirection="Left" Margin="0,5,0,0">
+                    <l:UnitBox x:Name="ro" UnitItems="{StaticResource Impedance}" Width="85" SelectedIndex="2" Value="50"/>
+                </l:LabeledControl>
+                <l:LabeledControl HeaderDirection="Left" Margin="0,5,0,0">
+                    <l:LabeledControl.Header>
+                        <TextBlock>Impedancia <math:FormulaControl Margin="0,0,0,-3" Formula="Z_h" Scale="13"/></TextBlock>
+                    </l:LabeledControl.Header>
+                    <l:UnitBox x:Name="zh" UnitItems="{StaticResource Impedance}" Width="85" SelectedIndex="2" Value="120"/>
+                </l:LabeledControl>
+                <l:LabeledControl HeaderDirection="Left" Margin="0,5,0,0">
+                    <l:LabeledControl.Header>
+                        <TextBlock>Impedancia <math:FormulaControl Margin="0,0,0,-3" Formula="Z_L" Scale="13"/></TextBlock>
+                    </l:LabeledControl.Header>
+                    <l:UnitBox x:Name="zl" UnitItems="{StaticResource Impedance}" Width="85" SelectedIndex="2" Value="20"/>
+                </l:LabeledControl>
+                <Button Click="calcule" Margin="0,5,0,0">Calculate</Button>
+
+                <StackPanel x:Name="gs" Margin="0,5,0,0"/>
+
+            </StackPanel>
+        </ContentControl>
+        <l:GraphA x:Name="gph"/>
+    </DockPanel>
+</Window>
